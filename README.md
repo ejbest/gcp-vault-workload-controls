@@ -8,7 +8,8 @@ GCP Dynamic Secrets Engine
 
 1. Research testing to provd out connection to dyncmic secrets in GCP.
 <br><br>
-2. Hashicorp Vault has GCP autheintication method that allows applications to authenticatewith Vault and fetch secrets required for deployments.   The terraform agents would be authenticating using using it's SA credentials.  Hashicorp Vault can also integrate with Kube secrets to allow applications running in GKE to pull and sync secrets in Vault and will require more reserch and testing.
+2. Hashicorp Vault has GCP autheintication method that allows applications to authenticatewith Vault and fetch secrets required for deployments.   The terraform agents would be authenticating using using it's SA credentials to VAULT and have access to GCP resources via a TOKEN from Vault with scope and TTL.  
+FYI addtionally (Hashicorp Vault can also integrate with Kube secrets to allow applications running in GKE to pull and sync secrets in Vault and will require more reserch and testing.)
 <br><br>
 3. GCP DYNAMIC ENGINE  
 - The engine should be configured to use "Workload Identity Federation" and not setup with an account key.
