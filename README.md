@@ -10,17 +10,15 @@ GCP Dynamic Secrets Engine
 <br><br>
 2. Hashicorp Vault has GCP autheintication method that allows applications to authenticatewith Vault and fetch secrets required for deployments.   The terraform agents would be authenticating using using it's SA credentials.  Hashicorp Vault can also integrate with Kube secrets to allow applications running in GKE to pull and sync secrets in Vault and will require more reserch and testing.
 <br><br>
-3. The engine should be configured to use “Workload Identity Federation and Workload Identity Pool" and not setup with an account key
-- Need setup <br> <br> 
+3. GCP DYNAMIC ENGINE  
+- The engine should be configured to use "Workload Identity Federation" and not setup with an account key.
+- A setup in "Workload Identity Pool setup in GCP and then "identify token audience configured for the engine setup.
+<br><br>
 - This will require a workload identity pool setup in GCP for this and the “identity token audience” configured on the engine setup. <br> <br> 
 - The engine “identify_token_ttl” should be set to 1 hour for now. <br> <br> 
 - The ttl and max-ttl need to be tested with the service account key roleset type.  Guess is that max_ttl actually means nothing and rotation is based on the ttl flag.   For now we can set them to 1 hour for testing or whatever interval to facilitate testing. 
 <br> <br>
-GCP DYNAMIC ENGINE  
-- The engine should be configured to use "Workload Identity Federation" and not setup with an account key.
-- A setup in "Workload Identity Pool setup in GCP and then "identify token audience configured for the engine setup.
-- The envine "ide
-. Our design calls for the creation and usage of static accounts - not Dynamic. 
+- Our design calls for the creation and usage of static accounts - not Dynamic. 
 <br> 
 - We should test role creations with both secret types (access token, account key) 
 <br> <br> 
