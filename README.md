@@ -26,10 +26,10 @@ Attributes
 - rotation of short lived keys 
 
 
-Topics to check in on 
+<b>Topics to check in on</b> 
 - Workload Identity Federation
+- Workload Identity Pool
 - OpenId connect (OIDC)
-- 
 
 Setting the correct scope
 - service account - google api 
